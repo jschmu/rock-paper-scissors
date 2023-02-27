@@ -11,6 +11,12 @@
     </body>
 
     <script>
+        let sign = prompt("What's your sign?");
+
+if (sign.toLowerCase() === "scorpio") {
+  alert("Wow! I'm a Scorpio too!");
+}
+
         function getComputerChoice() {
             let num = Math.floor(Math.random() * 100);
             let choice = 'paper';
@@ -22,14 +28,23 @@
             return choice;
         }
 
-        let playerSelection = 'paper';
-        //let computerSelection = getComputerChoice();
-        //console.log(computerSelection);
+        function getPlayerChoice() {
+            let num = Math.floor(Math.random() * 100);
+            let choice = 'paper';
+            if (num < 33) {
+                choice = 'rock';
+            }   else if (num > 66) {
+                choice = 'scissors';
+            }   else ;
+            return choice;
+        }
 
-        function playRound(playerSelection, computerSelection) {
+        function playRound(dog, cat) {          //It doesn't matter what you name the parameters
             computerSelection = getComputerChoice();
-            console.log(computerSelection);
-            if (playerSelection = 'paper') {
+            playerSelection = getPlayerChoice();
+            console.log('The computer chose ' + computerSelection);
+            console.log('You chose ' + playerSelection)
+            if (playerSelection === 'paper') {
                 if (computerSelection === 'rock') {
                     return 'Player wins!';
                 }   else if (computerSelection === "scissors") {
@@ -37,10 +52,26 @@
                 }   else {
                     return 'It is a draw.';
                 }
+            }   else if (playerSelection === 'rock') {
+                    if (computerSelection === 'paper') {
+                        return 'Computer wins!';
+                    }   else if (computerSelection === 'scissors') {
+                        return 'Player wins!';
+                    }   else {
+                        return 'It is a draw.';
+                    }
+            }   else if (playerSelection === 'scissors') {
+                    if (computerSelection === 'paper') {
+                        return 'Player wins!';
+                    }   else if (computerSelection === 'rock') {
+                        return 'Computer wins!';
+                    }   else {
+                        return 'It is a draw';
+                    }
             }
         }
    
-        console.log(playRound(playerSelection, getComputerChoice));
+        console.log(playRound(getPlayerChoice, getComputerChoice));
 
     </script>
 </html>
