@@ -8,32 +8,17 @@ function getComputerChoice() {
     }   else ;
     return choice;
 }
-//This returns a random choice for the player
-/*function getPlayerChoice() {
-    let num = Math.floor(Math.random() * 100);
-    let choice = 'paper';
-    if (num < 33) {
-        choice = 'rock';
-    }   else if (num > 66) {
-        choice = 'scissors';
-    }   else ;
-    return choice;
-}*/
 
-function playRound() {          //It doesn't matter what you name the parameters
+function playRound(e) {          
     let computerSelection = getComputerChoice();
-    //let userInput = prompt("Do you choose paper, rock or scissors?");
-    //let playerSelection = 'userInput.toLowerCase();'
-    let playerSelection = 'paper';
-    console.log('The computer chose ' + computerSelection);
-    console.log('You chose ' + playerSelection)
+    let playerSelection = e.target.innerHTML.toLowerCase();
     if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
-            return 'Player wins!';
+            console.log('Player wins!');
         }   else if (computerSelection === "scissors") {
-            return 'Computer wins!';
+            console.log('Computer wins!');
         }   else {
-            return 'It is a draw.';
+            console.log('It is a draw.');
         }
     }   else if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
@@ -54,16 +39,14 @@ function playRound() {          //It doesn't matter what you name the parameters
     }
 }
 
-//console.log(playRound());
-
-function getUserChoice(e) {
+/*function getUserChoice(e) {
     let userChoice = e.target.innerHTML.toLowerCase();
     console.log(userChoice);
     return userChoice;
 };
-
+*/
 const buttons = document.querySelectorAll('button'); //creates a nodelist
-buttons.forEach(button => button.addEventListener('click', getUserChoice));
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 /*function game() {
     let playerScore = 0;
