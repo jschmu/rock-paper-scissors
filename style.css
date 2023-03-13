@@ -1,14 +1,4 @@
-.paper {
-    color: red;
-}
 
-.rock {
-
-}
-
-.scissors {
-    
-}
 button {
     display: inline-block;
     background-color: #7b38d8;
@@ -16,4 +6,22 @@ button {
     width: 200px;
     color: #ffffff;
     text-align: center;
+}
+
+.result {
+    width: 600px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.player {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(15, 177, 29); 
+}
+
+.computer {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(216, 96, 210);
 }
